@@ -59,7 +59,7 @@ p { line-height: 1.9; }
 
 .nav-item.active .tm-nav-link,
 .nav-item:hover .tm-nav-link {
-    color: #607d8b;
+    color: #3878d7;
 }
 
 /* Page Background */
@@ -171,7 +171,7 @@ hr { border-top: 1px solid white; }
 }
 
 .btn-primary:hover {
-    background-color: #607d8b;
+    background-color: #3878d7;
     color: black;
 }
 
@@ -186,7 +186,7 @@ hr { border-top: 1px solid white; }
 
 .tm-text-link:hover,
 .tm-text-link:focus {
-    color: #607d8b;
+    color: #3878d7;
 }
 
 /* Service */ 
@@ -215,7 +215,7 @@ textarea {
     color: white;
     background-color: transparent;    
     box-shadow: none;
-    border-color: #607d8b;
+    border-color: #3878d7;
     outline: none;
 }
 
@@ -260,7 +260,7 @@ textarea {
 
     .nav-item.active .tm-nav-link,
     .nav-item:hover .tm-nav-link {
-        color: #607d8b;
+        color: #3878d7;
     }
 
     .tm-content { margin-top: 20px; }
