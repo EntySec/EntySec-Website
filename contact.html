@@ -121,9 +121,11 @@ https://templatemo.com/tm-550-entysec
 
                 emailjs.sendForm('service_zgo4mnn', 'template_d7thpw3', this)
                     .then(function() {
-                        console.log('SUCCESS!');
+                        alert('Message sent!');
+                        location.reload();
                     }, function(error) {
-                        console.log('FAILED...', error);
+                        alert('Failed to send message!');
+                        location.reload();
                     });
             });
         }
