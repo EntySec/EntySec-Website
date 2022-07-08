@@ -11,6 +11,12 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
     <link href="fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
     <link href="css/templatemo-entysec.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('xIHEbghY56ewsVvLe');
+        })();
+    </script>
 <!--
 
 TemplateMo 550 EntySec
@@ -62,11 +68,12 @@ https://templatemo.com/tm-550-entysec
                         <h2 class="mb-4 tm-content-title">Contact Us</h2>
                         <p class="mb-85">Our security consultants are glad to answer on you question. Just contact them here and in a few days you'll get answer.</p>
                         <form id="contact-form" action="" method="POST">
+                            <input type="hidden" name="contact_number">
                             <div class="form-group mb-4">
-                                <input type="text" name="name" class="form-control" placeholder="Name" required="" />
+                                <input type="text" name="user_name" class="form-control" placeholder="Name" required="" />
                             </div>
                             <div class="form-group mb-4">
-                                <input type="email" name="email" class="form-control" placeholder="Email" required="" />
+                                <input type="email" name="user_email" class="form-control" placeholder="Email" required="" />
                             </div>
                             <div class="form-group mb-5">
                                 <textarea rows="6" name="message" class="form-control" placeholder="Message" required=""></textarea>
@@ -105,5 +112,21 @@ https://templatemo.com/tm-550-entysec
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.backstretch.min.js"></script>
     <script src="js/templatemo-script.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                this.contact_number.value = Math.random() * 100000 | 0;
+
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>
