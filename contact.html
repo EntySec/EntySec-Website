@@ -116,5 +116,21 @@ https://templatemo.com/tm-550-entysec
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.backstretch.min.js"></script>
     <script src="js/templatemo-script.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                emailjs.sendForm('service_zgo4mnn', 'template_d7thpw3', this)
+                    .then(function() {
+                        alert('Message sent!');
+                        location.reload();
+                    }, function(error) {
+                        alert('Failed to send message!');
+                        location.reload();
+                    });
+            });
+        }
+    </script>
 </body>
 </html>
