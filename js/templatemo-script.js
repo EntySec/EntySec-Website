@@ -52,4 +52,6 @@ $(document).ready(function () {
     $(window).resize(function() {
         setBgOverlay();
     });
+
+    $(document).getElementById("year").innerHTML = new Date().getFullYear();
 });
